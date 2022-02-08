@@ -1,6 +1,6 @@
 import express from 'express';
-//import login from '../routes/login'
+import login from '../routes/users';
 
 export default(app:express.Application) => {
-    //app.use('/login');
+    app.use('/login', login);
 }

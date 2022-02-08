@@ -1,8 +1,5 @@
-
-
-
-
 import User from '../models/user';
+import userDao from '../daos/userDao'
 
 /**
  * Add one user.
@@ -10,7 +7,7 @@ import User from '../models/user';
  * @param user 
  * @returns 
  */
-function addOneUser(user: User): Promise<void> {
+function addOneUser(user: User):Promise<User> {
     return userDao.add(user);
 }
 // Export default

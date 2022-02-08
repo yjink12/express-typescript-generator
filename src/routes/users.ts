@@ -7,7 +7,7 @@ router.get('/', (req:Request, res:Response) => {
     res.render('login', {title:'login page'});
 });
 router.post('/', userService.addOneUser);
-router.delete('/:id', userService.deleteUser);
+//router.delete('/:id', userService.deleteUser);
 
 export default router;
 

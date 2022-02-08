@@ -1,3 +1,22 @@
+import User from '../models/user';
+
+
+/**
+ * Add one user.
+ * 
+ * @param user 
+ * @returns 
+ */
+async function add(user: User): Promise<User> {
+    
+    const result = await User.create(user);
+    return result;
+}
+// Export default
+export default {
+    add,
+} as const;
+
 // import { IUser } from 'src/models/user';
 // import { getRandomInt } from '@shared/functions';
 
@@ -45,18 +64,6 @@
 // }
 
 
-// /**
-//  * Add one user.
-//  * 
-//  * @param user 
-//  * @returns 
-//  */
-// async function add(user: IUser): Promise<void> {
-//     const db = await orm.openDb();
-//     user.id = getRandomInt();
-//     db.users.push(user);
-//     return orm.saveDb(db);
-// }
 
 
 // /**
@@ -95,12 +102,3 @@
 // }
 
 
-// // Export default
-// export default {
-//     getOne,
-//     persists,
-//     getAll,
-//     add,
-//     update,
-//     delete: deleteOne,
-// } as const;

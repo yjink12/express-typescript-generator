@@ -11,14 +11,17 @@ const serverStartMsg = 'Express server started on port: ',
         port = (process.env.PORT || 3000);
 
 // Start server
-app.listen(port, async () => {
-    logger.info(serverStartMsg + port);
-    console.log('start');
-    await sequelize.sync()
-    .then(()=>{
-        console.log('db connection success');
-    })
-    .catch((error) => {
-        console.log('error: '+ error);
-    })
-});
+// app.listen(port, async (): Promise<void> => {
+//     logger.info(serverStartMsg + port);
+//     console.log('start');
+//     await sequelize.sync()
+//     .then(()=>{
+//         console.log('db connection success');
+//     })
+//     .catch((error) => {
+//         console.log('error: '+ error);
+//     })
+// });
+async function startServer(){
+    const {url} = await app.listen(port);
+}
